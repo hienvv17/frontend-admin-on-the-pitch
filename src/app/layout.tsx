@@ -1,38 +1,28 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
-import QueryProvider from "@/Provider/QueryProvider";
+import { headers } from "next/headers";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import "../styles/globals.css";
+import ThemeRegistry from "./ThemeRegistry";
+import { Metadata } from "next";
+import ContextProvider from "@/provider/contextProvider";
 
-export const metadata: Metadata = {
-  title: "On The Pitch",
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "On the Pitch",
+    description: "",
+  };
+}
+const GlobalLayout = ({ children }: { children: React.ReactNode }) => {
+  const nonce = headers().get("x-nonce") ?? "";
+  return (
+    <html lang="en">
+      <body>
+        <ThemeRegistry nonce={nonce}>
+          <ContextProvider>{children}</ContextProvider>
+        </ThemeRegistry>
+      </body>
+    </html>
+  );
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <QueryProvider>
-      <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          {children}
-        </body>
-      </html>
-    </QueryProvider>
-  );
-}
+export default GlobalLayout;
 
