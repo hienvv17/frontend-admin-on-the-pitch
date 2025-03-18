@@ -1,18 +1,17 @@
 "use client";
 
-import { Box} from "@mui/material";
+import { ROUTES } from "@/utility/constant";
+import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
 
+const HomePage = () => {
+  const router = useRouter();
 
-export default function Home() {
-  return (
-    <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      height="100vh"
-    >
-     Home page admin
-    </Box>
-  );
-}
+  useEffect(() => {
+    router.push(ROUTES.DASHBOARD);
+  }, [router]);
+  return <React.Fragment></React.Fragment>;
+};
+
+export default HomePage;
 

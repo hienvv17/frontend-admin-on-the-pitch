@@ -9,10 +9,8 @@ function GoogleLogin() {
     try {
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
-      console.log(user)
       const token = await user.getIdToken();
       if (!token) {
-        //custom error handling later
         throw new Error("Google login failed");
       }
       const expriresIn = new Date(new Date().getTime() + 5 * 60 * 1000);

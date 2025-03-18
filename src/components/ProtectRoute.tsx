@@ -29,8 +29,7 @@ export const LoadingScreen = () => (
 export const ProtectRoute = ({ children }) => {
     const router = useRouter();
     const pathname = usePathname();
-
-    const [user, setUser] = useLocalStorage<string>(USERNAME, null);
+    const [user, setUser] = useLocalStorage<{ email: string; role: string } | null>(USERNAME, null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
