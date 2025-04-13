@@ -9,6 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.4.7",
+    "@mui/lab": "6.0.0-beta.30",
+    "@mui/material": "^6.4.7",
+    "@mui/material-nextjs": "^6.4.3",
     "@radix-ui/react-slot": "^1.1.0",
     "@tanstack/react-query": "^5.56.2",
     "@types/js-cookie": "^3.0.6",
@@ -23,10 +29,13 @@
     "npm": "^10.8.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-spinners": "^0.15.0",
+    "react-toastify": "^11.0.5",
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
     "@types/node": "^20.16.5",
+    "@types/prop-types": "^15.7.14",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",

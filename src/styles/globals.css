@@ -1,0 +1,76 @@
+html,
+body {
+  background: #f5f5f5;
+  /*background: #f2f5f9;*/
+  padding: 0;
+  margin: 0;
+  color: #000;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+.link {
+  color: #629bd8;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.selection-option {
+  cursor: pointer;
+  color: #223354b3;
+  transition: all 0.3s ease-in-out;
+}
+.selection-option:hover {
+  color: #629bd8;
+  transition: all 0.3s ease-in-out;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    color: unset !important;
+  }
+  .next-error-h1 {
+    border-right: 1px solid #000 !important;
+  }
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.svgIcon,
+.imgPreview {
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+.svgIcon:hover,
+.imgPreview:hover {
+  transform: scale(0.9);
+  transition: all 0.4s ease-in-out;
+}
+.svgIconReverse {
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  transform: rotate(180deg)
+}
+.flexBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+th {
+  background-color: #1F1F1F !important;
+}
