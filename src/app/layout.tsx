@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import "../styles/globals.css";
 import ThemeRegistry from "./ThemeRegistry";
 import { Metadata } from "next";
-import ContextProvider from "@/provider/contextProvider";
+import ContextProvider from "@/Provider/contextProvider";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
