@@ -10,7 +10,7 @@ export function useLocalStorage<T>(key: string, fallbackValue: T) {
         return fallbackValue;
       }
 
-      const stored = localStorage.getItem(key);
+      const stored = localStorage.getItem(key) || "undefined";
 
       return stored !== "undefined" ? JSON.parse(stored) : fallbackValue;
     },
@@ -22,7 +22,7 @@ export function useLocalStorage<T>(key: string, fallbackValue: T) {
   );
 
   useEffect(() => {
-    const stored = localStorage.getItem(key);
+    const stored = localStorage.getItem(key) || "undefined";
 
     setValue(stored !== "undefined" ? JSON.parse(stored) : fallbackValue);
   }, [fallbackValue, key]);

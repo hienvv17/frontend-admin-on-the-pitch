@@ -2,7 +2,7 @@
 import { FC, ReactNode } from "react";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { AuthProvider } from "../authProvider";
+import { AuthProvider } from "./authProvider";
 
 type Props = {
   children: ReactNode;

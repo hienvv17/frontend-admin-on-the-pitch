@@ -1,6 +1,6 @@
 export interface AuthContextType {
     isAuthenticated: boolean;
-    user: null
+    user: {email: string, role: string} | null
     setUser: (user: {email: string, role: string} | null) => void;
     loading: boolean;
 }

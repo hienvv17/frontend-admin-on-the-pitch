@@ -28,6 +28,7 @@ const AuthContext = createContext<AuthContextProps>({
 // to do, checki if ther is
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
 
   useEffect(() => {
     // Check for cookie on mount
@@ -36,7 +37,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, setLoggedIn: setIsLoggedIn }}>
+    <AuthContext.Provider
+      value={{ isLoggedIn, userInfo, setLoggedIn: setIsLoggedIn, setUserInfo }}
+    >
       {children}
     </AuthContext.Provider>
   );

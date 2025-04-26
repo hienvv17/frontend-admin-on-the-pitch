@@ -34,7 +34,7 @@ export const publicApi = (subPath = "") => {
   return api;
 };
 // need have token auth
-export const privateApi = <T>(subPath = ""): AxiosInstance => {
+export const privateApi = (subPath = ""): AxiosInstance => {
   const api = axios.create({
     baseURL: `${process.env.NEXT_PUBLIC_BASE_URL}/${subPath}`,
     headers: { "Content-Type": "application/json" },
@@ -64,6 +64,7 @@ export const privateApi = <T>(subPath = ""): AxiosInstance => {
 
   return api;
 };
+
 
 async function checkErrorCode(response: AxiosResponse<APIResponse>) {
   try {
